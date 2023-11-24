@@ -28,8 +28,7 @@ imagePaths = sorted(list(paths.list_images(config.IMAGE_DATASET_PATH)))
 maskPaths = sorted(list(paths.list_images(config.MASK_DATASET_PATH)))
 # partition the data into training and testing splits using 85% of
 # the data for training and the remaining 15% for testing
-split = train_test_split(imagePaths, maskPaths,
-	test_size=config.TEST_SPLIT, random_state=42)
+split = train_test_split(imagePaths, maskPaths,test_size=config.TEST_SPLIT, random_state=42)
 # unpack the data split
 (trainImages, testImages) = split[:2]
 (trainMasks, testMasks) = split[2:]
